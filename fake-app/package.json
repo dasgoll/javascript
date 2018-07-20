@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: ma fee test specified\" && exit 1"
   },
   "dependencies": {
     "node-fetch": "node-fetch"
