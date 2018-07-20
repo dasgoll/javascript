@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title></title>
+	<style>
+		#getText {
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+
+
+	<button id="getText">Get text</button>
+	<button id="getUsers">Get Users</button>
+	<br>
+	<br>
+	<div id="output"></div>
+	<br>
+	<div id="output2"></div>
+	<script>
+
+		btn1 = document.getElementById("getText");
+
+		btn1.addEventListener("click", () => {
+			fetch('data.txt')
+				.then(res => res.text())
+				.then(res => document.getElementById("output").innerHTML = res)
+		});
+
+
+		btn2 = document.getElementById("getUsers");
+
+		btn2.addEventListener("click", () => {
+			fetch('users.json')
+				.then(res => res.json())
+				.then(res => {
+					let output = '';
+					res.forEach(user => {
+						output += `
+							<ul>
+								<li>ID: ${user.id}</li>		
+								<li>Name: ${user.name}</li>		
+								<li>Email: ${user.email}</li>		
+							</ul>
+						`;
+					});
+				document.getElementById('output2').innerHTML = output;	
+				})
+				.catch(err => console.log(`hada el error ${err}`))
+		});
+
+
+	</script>
+</body>
+
+
+
+</html>

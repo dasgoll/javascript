@@ -1,0 +1,16 @@
+{
+  "name": "fake-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "node-fetch": "node-fetch"
+  }
+  ,
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
