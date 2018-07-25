@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .collection-item {
+            color: blue;
+            cursor: pointer;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+<body>
+   
+    <div class="container">
+        <h1 class="center-align">
+            My contacts
+        </h1>
+        <input type="text" name="filterInput" id="filterInput" placeholder="Search for names...">
+        <ul id="names" class="collection with-header">
+            <li class="collection-header">A</li>
+            <li class="collection-item">Abe</li>
+            <li class="collection-item">Ada</li>
+            <li class="collection-item">Alan</li>
+            <li class="collection-item">Anna</li>
+            <li class="collection-header">B</li>
+            <li class="collection-item">Bad<li></li>
+            <li class="collection-item">Baddy<li>
+            <li class="collection-item">Badr<li>
+            </li>
+            <li class="collection-item">Bob<li>
+            <li class="collection-item">Bill</li>
+            <li class="collection-item">Beth</li>
+        </ul>
+    </div>
+
+    <script>
+        let filterInput = document.getElementById('filterInput');
+        filterInput.addEventListener('keyup', (e) => {
+            let filterValue = e.target.value.toUpperCase();
+            let ul = document.getElementById('names');
+            let li = ul.querySelectorAll('li.collection-item');
+
+            for (let i = 0; i < li.length; i++) {
+                name  = li[i].innerText.toUpperCase();
+                if(name.startsWith(filterValue)){
+                    li[i].style.display = '';
+                } else {
+                    li[i].style.display = 'none';    
+                }
+                
+            }
+        })
+    </script>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+     <a href='#'>awal</a>
+     <br>
+     <a href='JavaScript:Void(0);'>tani</a>
+    
+     
+</body>
+</html>
